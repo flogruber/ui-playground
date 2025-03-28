@@ -17,10 +17,10 @@ jobs:
       run: dotnet restore
 
     - name: Build
-      run: dotnet build --no-restore
+      run: dotnet build ./UI-Playground/UI-Playground/UI-Playground.csproj --no-restore
 
     - name: Publish .NET Core Project
-      run: dotnet publish -c Release -o release --nologo --self-contained true
+      run: dotnet publish ./UI-Playground/UI-Playground/UI-Playground.csproj -c Release -o release --nologo --self-contained true
 
     - name: Upload static files as artifact
       id: deployment
